@@ -1,0 +1,23 @@
+{
+  "name": "3ub-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "file=\"token\" DISCORD_TOKEN=$(cat \"$file\") ts-node src/index.ts",
+    "startTest": "file=\"testToken\" DISCORD_TOKEN=$(cat \"$file\") ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "thilo bartel",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.19.3",
+    "dotenv": "^17.4.2",
+    "pm2": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
