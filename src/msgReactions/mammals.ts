@@ -1,4 +1,4 @@
-import { Message, OmitPartialGroupDMChannel, Emoji } from "discord.js";
+import { Message, OmitPartialGroupDMChannel } from "discord.js";
 
 const keyOtter: string[] = ["otter"];
 const keySloth: string[] = ["sloth", "lazy", "faul"];
@@ -15,9 +15,7 @@ const keyDeer: string[] = ["deer", "rentier", "hirsch"];
 const keyBison: string[] = ["bison"];
 const keyFox: string[] = ["fox", "fuchs"];
 
-export const reactOtter = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactOtter = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyOtter) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦦");
@@ -26,9 +24,7 @@ export const reactOtter = (
   }
 };
 
-export const reactSloth = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactSloth = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keySloth) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦥");
@@ -37,7 +33,7 @@ export const reactSloth = (
   }
 };
 
-export const reactCat = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
+const reactCat = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyCat) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🐈‍⬛");
@@ -45,7 +41,7 @@ export const reactCat = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
     }
   }
 };
-export const reactLion = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
+const reactLion = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyLion) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦁‍");
@@ -53,9 +49,7 @@ export const reactLion = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
     }
   }
 };
-export const reactTiger = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactTiger = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyTiger) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🐅‍");
@@ -63,9 +57,7 @@ export const reactTiger = (
     }
   }
 };
-export const reactHorse = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactHorse = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyHorse) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🐎");
@@ -73,9 +65,7 @@ export const reactHorse = (
     }
   }
 };
-export const reactUnicorn = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactUnicorn = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyUnicorn) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦄");
@@ -83,9 +73,7 @@ export const reactUnicorn = (
     }
   }
 };
-export const reactMonkey = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactMonkey = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyMonkey) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🐒");
@@ -93,7 +81,7 @@ export const reactMonkey = (
     }
   }
 };
-export const reactDog = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
+const reactDog = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyDog) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🐕");
@@ -101,7 +89,7 @@ export const reactDog = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
     }
   }
 };
-export const reactWolf = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
+const reactWolf = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyWolf) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🐺");
@@ -109,9 +97,7 @@ export const reactWolf = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
     }
   }
 };
-export const reactZebra = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactZebra = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyZebra) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦓");
@@ -119,7 +105,7 @@ export const reactZebra = (
     }
   }
 };
-export const reactDeer = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
+const reactDeer = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyDeer) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦌");
@@ -127,9 +113,7 @@ export const reactDeer = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
     }
   }
 };
-export const reactBison = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactBison = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyBison) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦬");
@@ -137,7 +121,7 @@ export const reactBison = (
     }
   }
 };
-export const reactFox = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
+const reactFox = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyFox) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦊");
@@ -151,9 +135,7 @@ const keyOrangutan: string[] = ["orangutan"];
 const keyPoodle: string[] = ["poodle", "pudel"];
 const keyGuideDog: string[] = ["blind"];
 
-export const reactGorilla = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactGorilla = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyGorilla) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦍");
@@ -161,9 +143,7 @@ export const reactGorilla = (
     }
   }
 };
-export const reactOrangutan = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactOrangutan = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyOrangutan) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦧");
@@ -171,9 +151,7 @@ export const reactOrangutan = (
     }
   }
 };
-export const reactPoodle = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactPoodle = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyPoodle) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🐩");
@@ -181,9 +159,7 @@ export const reactPoodle = (
     }
   }
 };
-export const reactGuideDog = (
-  msg: OmitPartialGroupDMChannel<Message<boolean>>,
-) => {
+const reactGuideDog = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
   for (const keyWord of keyGuideDog) {
     if (msg.content.toLowerCase().includes(keyWord)) {
       msg.react("\🦮");

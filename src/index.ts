@@ -1,13 +1,14 @@
 import dotenv from "dotenv";
 dotenv.config();
 import { Client, ClientOptions, GatewayIntentBits } from "discord.js";
-import { reactCaptain } from "./captainReactions";
-import { reactQoo } from "./qooReactions";
-import { reactMammals } from "./mammals";
-import { reactMagic } from "./magic";
-import { reactDemon } from "./demon";
-import { reactChicken, reactCock } from "./birdReactions";
-import { reactFrog, reactPaw } from "./other";
+import { reactCaptain } from "./msgReactions/captainReactions";
+import { reactQoo } from "./msgReactions/qooReactions";
+import { reactMammals } from "./msgReactions/mammals";
+import { reactMagic } from "./msgReactions/magic";
+import { reactDemon } from "./msgReactions/demon";
+import { reactChicken, reactCock } from "./msgReactions/birdReactions";
+import { reactFrog, reactPaw } from "./msgReactions/other";
+import { reactFood } from "./msgReactions/food";
 
 const options: ClientOptions = {
   intents: [
@@ -34,5 +35,6 @@ client.on("messageCreate", (msg) => {
     reactMammals(msg);
     reactPaw(msg);
     reactFrog(msg);
+    reactFood(msg);
   }
 });
