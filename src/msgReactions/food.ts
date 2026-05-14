@@ -1,69 +1,79 @@
-import { Message, OmitPartialGroupDMChannel, Emoji } from "discord.js";
+import { Message, OmitPartialGroupDMChannel } from "discord.js";
 
-const keyApple = ["apple", "apfel"];
-const keyPear = ["pear", "birne"];
-const keyOrange = ["orange"];
-const keyCitron = ["citron", "zitron"];
+interface FoodReaction {
+  keywords: string[];
+  emoji: string;
+}
 
-const reactApple = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
-  for (const keyWord of keyApple) {
-    if (msg.content.toLowerCase().includes(keyWord)) {
-      msg.react("\🍎");
-      break;
+const foodReactions: FoodReaction[] = [
+  // Fruits
+  { keywords: ["apple", "apfel"], emoji: "🍎" },
+  { keywords: ["pear", "birne"], emoji: "🍐" },
+  { keywords: ["orange"], emoji: "🍊" },
+  { keywords: ["citron", "zitron", "lemon"], emoji: "🍋" },
+  { keywords: ["lime"], emoji: "🍋‍🟩" },
+  { keywords: ["banan"], emoji: "🍌" },
+  { keywords: ["watermelon", "wassermelone"], emoji: "🍉" },
+  { keywords: ["grapes", "trauben"], emoji: "🍇" },
+  { keywords: ["strawberry", "erdbeere"], emoji: "🍓" },
+  { keywords: ["blueberry", "blaubeere"], emoji: "🫐" },
+  { keywords: ["honeydew", "honigmelone"], emoji: "🍈" },
+  { keywords: ["cherry", "kirsche"], emoji: "🍒" },
+  { keywords: ["peach", "pfirsich"], emoji: "🍑" },
+  { keywords: ["mango"], emoji: "🥭" },
+  { keywords: ["pineapple", "ananas"], emoji: "🍍" },
+  { keywords: ["coconut", "kokosnuss"], emoji: "🥥" },
+  { keywords: ["kiwifruit", "kiwi"], emoji: "🥝" },
+  // Vegetables
+  { keywords: ["tomato", "tomate"], emoji: "🍅" },
+  { keywords: ["eggplant", "aubergine"], emoji: "🍆" },
+  { keywords: ["avocado"], emoji: "🥑" },
+  { keywords: ["broccoli", "brokkoli"], emoji: "🥦" },
+  { keywords: ["peas", "erbsen"], emoji: "🫛" },
+  { keywords: ["cabbage", "leafy green", "kohl", "kale"], emoji: "🥬" },
+  { keywords: ["beetroot", "rübe", "rote beete"], emoji: "🫕" },
+  { keywords: ["pickle", "gurke"], emoji: "🥒" },
+  { keywords: ["chili", "pepperoni"], emoji: "🌶" },
+  { keywords: ["bellpepper", "paprika"], emoji: "🫑" },
+  { keywords: ["corn", "mais"], emoji: "🌽" },
+  { keywords: ["carrot", "möhre", "karotte"], emoji: "🥕" },
+  { keywords: ["olive"], emoji: "🫒" },
+  { keywords: ["garlic", "knoblauch"], emoji: "🧄" },
+  { keywords: ["onion", "zwiebel"], emoji: "🧅" },
+  { keywords: ["ginger", "ingwer"], emoji: "🫚" },
+  { keywords: ["potato", "kartoffel"], emoji: "🥔" },
+  { keywords: ["sweetpotato", "süßkartoffel"], emoji: "🍠" },
+  { keywords: ["bean", "bohne"], emoji: "🫘" },
+  // Breads & Grains
+  { keywords: ["croissant"], emoji: "🥐" },
+  { keywords: ["bagel"], emoji: "🥯" },
+  { keywords: ["bread", "brot"], emoji: "🍞" },
+  { keywords: ["baguette", "stangenbrot"], emoji: "🥖" },
+  { keywords: ["pretzel", "brezel"], emoji: "🥨" },
+  // Dairy & Eggs
+  { keywords: ["cheese", "käse"], emoji: "🧀" },
+  { keywords: ["egg", " ei ", " ei."], emoji: "🥚" },
+  { keywords: ["fried egg", "spiegeleier"], emoji: "🍳" },
+  { keywords: ["butter"], emoji: "🧈" },
+  { keywords: ["pancake", "pfannkuchen"], emoji: "🥞" },
+  { keywords: ["waffle", "waffel"], emoji: "🧇" },
+  // Meat
+  { keywords: ["bacon", "speck"], emoji: "🥓" },
+  { keywords: ["meat", "fleisch"], emoji: "🥩" },
+  { keywords: ["chicken", "hähnchen", "huhn"], emoji: "🎗" },
+];
+
+const reactToFood = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
+  const lowerContent = msg.content.toLowerCase();
+
+  for (const food of foodReactions) {
+    for (const keyword of food.keywords) {
+      if (lowerContent.includes(keyword.toLowerCase())) {
+        msg.react(food.emoji);
+        break;
+      }
     }
   }
 };
-const reactPear = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
-  for (const keyWord of keyPear) {
-    if (msg.content.toLowerCase().includes(keyWord)) {
-      msg.react("\🍐");
-      break;
-    }
-  }
-};
-const reactOrange = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
-  for (const keyWord of keyOrange) {
-    if (msg.content.toLowerCase().includes(keyWord)) {
-      msg.react("\🍊");
-      break;
-    }
-  }
-};
-const reactCitron = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
-  for (const keyWord of keyCitron) {
-    if (msg.content.toLowerCase().includes(keyWord)) {
-      msg.react("\🍋");
-      break;
-    }
-  }
-};
 
-const keyLime = ["lime"];
-
-const reactLime = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
-  for (const keyWord of keyLime) {
-    if (msg.content.toLowerCase().includes(keyWord)) {
-      msg.react("\🍋‍🟩");
-      break;
-    }
-  }
-};
-const keyBanana = ["banan"];
-
-const reactBanana = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
-  for (const keyWord of keyBanana) {
-    if (msg.content.toLowerCase().includes(keyWord)) {
-      msg.react("\🍌");
-      break;
-    }
-  }
-};
-
-export const reactFood = (msg: OmitPartialGroupDMChannel<Message<boolean>>) => {
-  reactApple(msg);
-  reactOrange(msg);
-  reactPear(msg);
-  reactCitron(msg);
-  reactLime(msg);
-  reactBanana(msg);
-};
+export const reactFood = reactToFood;
