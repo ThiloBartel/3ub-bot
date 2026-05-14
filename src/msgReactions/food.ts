@@ -106,7 +106,7 @@ const foodReactions: FoodReaction[] = [
   { keywords: ["curry"], emoji: "🍛" },
   { keywords: ["steaming bowl", "noodles"], emoji: "🍜" },
   { keywords: ["spaghetti"], emoji: "🍝" },
-  { keywords: ["sweet potato"], emoji: "🍠" },
+  { keywords: ["sweet potato", "Süßkartoffel"], emoji: "🍠" },
   { keywords: ["oden"], emoji: "🍢" },
   { keywords: ["sushi"], emoji: "🍣" },
   { keywords: ["fried shrimp"], emoji: "🍤" },
