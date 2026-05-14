@@ -1,24 +1,30 @@
+import { Client, ClientOptions, GatewayIntentBits, Partials } from "discord.js";
 import dotenv from "dotenv";
-dotenv.config();
-import { Client, ClientOptions, GatewayIntentBits } from "discord.js";
-import { reactCaptain } from "./msgReactions/captainReactions";
-import { reactQoo } from "./msgReactions/qooReactions";
-import { reactMammals } from "./msgReactions/mammals";
-import { reactMagic } from "./msgReactions/magic";
-import { reactDemon } from "./msgReactions/demon";
 import { reactChicken, reactCock } from "./msgReactions/birdReactions";
-import { reactFrog, reactPaw } from "./msgReactions/other";
+import { reactCaptain } from "./msgReactions/captainReactions";
+import { reactDemon } from "./msgReactions/demon";
 import { reactFood } from "./msgReactions/food";
+import { reactMagic } from "./msgReactions/magic";
+import { reactMammals } from "./msgReactions/mammals";
+import { reactFrog, reactPaw } from "./msgReactions/other";
+import { reactQoo } from "./msgReactions/qooReactions";
+dotenv.config();
+
+const { User, Message, GuildMember, ThreadMember, Poll } = Partials;
 
 const options: ClientOptions = {
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.DirectMessagePolls,
+    GatewayIntentBits.DirectMessageTyping,
     GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.DirectMessageReactions,
     GatewayIntentBits.MessageContent,
     GatewayIntentBits.GuildMessageReactions,
   ],
+  partials: [User, Message, GuildMember, ThreadMember, Poll],
 };
 
 const client = new Client(options);
